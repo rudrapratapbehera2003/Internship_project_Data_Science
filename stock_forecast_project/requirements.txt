@@ -1,0 +1,20 @@
+# Core dependencies
+Django==5.2.7
+pandas==2.2.3
+numpy==2.1.2
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# Time series and forecasting
+prophet==1.1.6
+
+
+# Utilities and compatibility
+python-dateutil==2.9.0.post0
+pytz==2024.2
+
+# For model saving/loading
+pickle-mixin==1.0.2
+
+# Optional: To handle visualization or testing
+plotly==5.24.1

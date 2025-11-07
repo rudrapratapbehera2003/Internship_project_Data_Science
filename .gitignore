@@ -1,0 +1,8 @@
+# Ignore all PowerPoint presentations
+*.pptx
+
+# Ignore all video files
+*.mp4
+
+# Ignore all PDF documents
+*.pdf

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Forecast</title>
+  <link rel="stylesheet" href="{% static 'predictor/style.css' %}">
+</head>
+<body>
+  <h1>Stock Forecast Using Prophet</h1>
+
+ <form method="post">
+    {% csrf_token %}
+    <label for="days">Enter number of periods (trading hours):</label>
+    <input type="number" name="days" id="days" placeholder="e.g. 30">
+    <button type="submit">Predict</button>
+</form>
+
+{% if plot_base64 %}
+    <h3>Forecast Plot</h3>
+    <img src="{{ plot_base64 }}" alt="Forecast Plot" style="width:100%; max-width:800px;">
+{% endif %}
+
+{% if forecast_table %}
+    <h3>Forecast Data</h3>
+    <table border="1">
+        <tr>
+            <th>Date-Time</th>
+            <th>Predicted Stock</th>
+            <th>NASDAQ Index</th>
+            <th>Lag 1</th>
+            <th>Lag 2</th>
+            <th>Lag 3</th>
+            <th>Lag 4</th>
+        </tr>
+        {% for row in forecast_table %}
+        <tr>
+            <td>{{ row.ds }}</td>
+            <td>{{ row.predicted_stock }}</td>
+            <td>{{ row.nasdaq_index }}</td>
+            <td>{{ row.lag_1 }}</td>
+            <td>{{ row.lag_2 }}</td>
+            <td>{{ row.lag_3 }}</td>
+            <td>{{ row.lag_4 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+</body>
+</html>
