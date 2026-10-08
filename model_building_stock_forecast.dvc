@@ -1,0 +1,6 @@
+outs:
+- md5: 20464ff22347b70e280eca6fca07f8b2.dir
+  size: 21144826
+  nfiles: 7
+  hash: md5
+  path: model_building_stock_forecast

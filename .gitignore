@@ -1,8 +1,39 @@
-# Ignore all PowerPoint presentations
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+
+# Python Cache & Compiled Files
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebooks & Checkpoints
+.ipynb_checkpoints
+*.ipynb
+
+# ML Models & Serialization
+*.pkl
+*.joblib
+/model_building_stock_forecast/
+/stock_forecast_project/stock_forecast/models/
+
+# Datasets & Compressed Files
+*.csv
+*.xlsx
+*.zip
+
+# Media & Documents
 *.pptx
-
-# Ignore all video files
 *.mp4
-
-# Ignore all PDF documents
 *.pdf
+
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
